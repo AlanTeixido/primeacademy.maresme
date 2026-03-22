@@ -1,11 +1,12 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import StatsBar from './components/StatsBar'
 import Serveis from './components/Serveis'
 import Metodologia from './components/Metodologia'
 import Destinataris from './components/Destinataris'
-import Horaris from './components/Horaris'
 import Staff from './components/Staff'
 import Preus from './components/Preus'
+import Horaris from './components/Horaris'
 import SobreNosaltres from './components/SobreNosaltres'
 import Contacte from './components/Contacte'
 import Footer from './components/Footer'
@@ -14,10 +15,11 @@ import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   return (
-    <div className="min-h-screen bg-prime-900">
+    <div className="min-h-screen" style={{ backgroundColor: '#0a0a0a' }}>
       <ScrollProgress />
       <Navbar />
       <Hero />
+      <StatsBar />
       <Serveis />
       <Metodologia />
       <Destinataris />
