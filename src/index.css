@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-prime-900: #0f2218;
-  --color-prime-800: #142e20;
-  --color-prime-700: #1a3a2a;
-  --color-prime-600: #234d38;
-  --color-prime-500: #2d6148;
-  --color-accent: #4ade80;
-  --color-accent-hover: #22c55e;
-  --color-accent-light: #86efac;
-  --color-accent-dark: #166534;
+  --color-prime-900: #0a0a0a;
+  --color-prime-800: #111111;
+  --color-prime-700: #1a1a1a;
+  --color-prime-600: #2a2a2a;
+  --color-prime-500: #3a3a3a;
+  --color-accent: #CC0000;
+  --color-accent-hover: #aa0000;
+  --color-accent-light: #ff3333;
+  --color-accent-dark: #880000;
 }
 
 @layer base {
@@ -52,7 +52,7 @@
 }
 
 @keyframes energy-glow {
-  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
-  70% { box-shadow: 0 0 0 14px rgba(74, 222, 128, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(204, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0); }
 }

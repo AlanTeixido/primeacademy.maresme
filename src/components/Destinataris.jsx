@@ -5,7 +5,7 @@ const perfils = [
   {
     icon: GiSoccerKick,
     title: 'Futbolistes F7',
-    description: 'Jugadors i jugadores de futbol 7 de totes les edats que volen millorar la seva tècnica individual, la presa de decisions i el rendiment al camp.',
+    description: 'Jugadors i jugadores de futbol 7 que volen millorar la seva tècnica individual, la presa de decisions i el rendiment al camp. Especialment nascuts 2016-2017, però obert a totes les edats.',
     color: 'from-accent/20 to-prime-800',
   },
   {

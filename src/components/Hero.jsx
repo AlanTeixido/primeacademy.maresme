@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { GiSoccerBall, GiSoccerField } from 'react-icons/gi'
 
+const FORM_URL = 'https://forms.gle/EbTKJiyBLPnM51bd9'
+
 export default function Hero() {
   return (
     <section
@@ -8,8 +10,8 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-prime-900 via-prime-700 to-prime-900" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(74,222,128,0.12),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(74,222,128,0.06),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(204,0,0,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(204,0,0,0.06),transparent_50%)]" />
 
       <motion.div
         animate={{ y: [0, -18, 0], rotate: [0, 15, 0] }}
@@ -57,7 +59,7 @@ export default function Hero() {
           className="mt-6 sm:mt-8 text-gray-300/80 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed"
         >
           Acadèmia esportiva al Maresme especialitzada en tecnificació futbol 7,
-          millora del rendiment i readaptació de lesions. Sessions els diumenges a la tarda.
+          millora del rendiment i readaptació de lesions. Nascuts 2016-2017. Diumenges a la tarda.
         </motion.p>
 
         <motion.div
@@ -67,17 +69,19 @@ export default function Hero() {
           className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="#serveis"
-            className="group relative bg-accent hover:bg-accent-hover text-prime-900 px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wider transition-all overflow-hidden"
+            href={FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wider transition-all overflow-hidden"
           >
-            <span className="relative z-10">Descobreix els serveis</span>
+            <span className="relative z-10">Inscriu-te ara</span>
             <span className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-500 rounded-xl" />
           </a>
           <a
-            href="#contacte"
+            href="#serveis"
             className="border-2 border-accent/50 hover:border-accent text-white px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wider transition-all hover:bg-accent/10"
           >
-            Inscriu-te ara
+            Descobreix els serveis
           </a>
         </motion.div>
       </div>

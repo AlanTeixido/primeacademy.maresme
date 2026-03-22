@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
-import { HiCalendar, HiClock, HiLocationMarker, HiSun } from 'react-icons/hi'
+import { HiCalendar, HiClock, HiLocationMarker, HiUserGroup } from 'react-icons/hi'
+
+const FORM_URL = 'https://forms.gle/EbTKJiyBLPnM51bd9'
 
 export default function Horaris() {
   return (
     <section id="horaris" className="py-16 sm:py-20 lg:py-24 bg-prime-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(74,222,128,0.05),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(204,0,0,0.05),transparent_70%)]" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ y: 60, opacity: 0 }}
@@ -64,12 +66,12 @@ export default function Horaris() {
 
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
-                <HiSun className="text-accent text-xl" />
+                <HiUserGroup className="text-accent text-xl" />
               </div>
               <div>
-                <h3 className="text-white font-bold text-lg">Ambient</h3>
-                <p className="text-accent font-semibold text-xl mt-1">A l'aire lliure</p>
-                <p className="text-gray-400 text-sm mt-1">Entrena amb la brisa del Maresme</p>
+                <h3 className="text-white font-bold text-lg">Edat</h3>
+                <p className="text-accent font-semibold text-xl mt-1">Nascuts 2016-2017</p>
+                <p className="text-gray-400 text-sm mt-1">Obert a altres edats</p>
               </div>
             </div>
           </div>
@@ -79,10 +81,12 @@ export default function Horaris() {
               Vols reservar la teva plaça per al proper diumenge?
             </p>
             <a
-              href="#contacte"
-              className="inline-block bg-accent hover:bg-accent-hover text-prime-900 px-8 py-3.5 rounded-xl font-bold uppercase tracking-wider transition-all hover:shadow-[0_0_25px_rgba(74,222,128,0.4)]"
+              href={FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-accent hover:bg-accent-hover text-white px-8 py-3.5 rounded-xl font-bold uppercase tracking-wider transition-all hover:shadow-[0_0_25px_rgba(204,0,0,0.4)]"
             >
-              Reserva ara
+              Inscriu-te
             </a>
           </div>
         </motion.div>

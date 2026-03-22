@@ -45,7 +45,7 @@ const stepVariant = {
 export default function Metodologia() {
   return (
     <section id="metodologia" className="py-16 sm:py-20 lg:py-24 bg-prime-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(74,222,128,0.06),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(204,0,0,0.06),transparent_60%)]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ y: 60, opacity: 0 }}

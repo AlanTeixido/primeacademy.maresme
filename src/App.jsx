@@ -4,6 +4,8 @@ import Serveis from './components/Serveis'
 import Metodologia from './components/Metodologia'
 import Destinataris from './components/Destinataris'
 import Horaris from './components/Horaris'
+import Staff from './components/Staff'
+import Preus from './components/Preus'
 import SobreNosaltres from './components/SobreNosaltres'
 import Contacte from './components/Contacte'
 import Footer from './components/Footer'
@@ -18,6 +20,8 @@ function App() {
       <Serveis />
       <Metodologia />
       <Destinataris />
+      <Staff />
+      <Preus />
       <Horaris />
       <SobreNosaltres />
       <Contacte />

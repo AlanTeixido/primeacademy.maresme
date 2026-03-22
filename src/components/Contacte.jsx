@@ -1,13 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { HiLocationMarker, HiPhone, HiMail } from 'react-icons/hi'
+import { HiLocationMarker, HiMail } from 'react-icons/hi'
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
-const contactInfo = [
-  { icon: HiLocationMarker, label: 'Ubicació', value: 'Sant Pol de Mar, Maresme (Barcelona)' },
-  { icon: HiPhone, label: 'Telèfon', value: '+34 600 123 456' },
-  { icon: HiMail, label: 'Email', value: 'info@primeacademymaresme.com' },
-]
+const FORM_URL = 'https://forms.gle/EbTKJiyBLPnM51bd9'
 
 export default function Contacte() {
   const [formData, setFormData] = useState({ nom: '', email: '', telefon: '', missatge: '' })
@@ -105,7 +101,7 @@ export default function Contacte() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-accent hover:bg-accent-hover text-prime-900 py-3.5 rounded-xl font-bold uppercase tracking-wider transition-all hover:shadow-[0_0_25px_rgba(74,222,128,0.4)]"
+                className="w-full bg-accent hover:bg-accent-hover text-white py-3.5 rounded-xl font-bold uppercase tracking-wider transition-all hover:shadow-[0_0_25px_rgba(204,0,0,0.4)]"
               >
                 {submitted ? 'Missatge enviat!' : 'Enviar missatge'}
               </button>
@@ -119,28 +115,29 @@ export default function Contacte() {
             transition={{ type: 'spring', stiffness: 120, damping: 18, delay: 0.2 }}
             className="space-y-5"
           >
-            {contactInfo.map((info) => (
-              <div key={info.label} className="flex items-start gap-4 p-4 rounded-xl bg-prime-800 border border-prime-600">
-                <info.icon className="text-accent text-xl mt-0.5 shrink-0" />
-                <div>
-                  <h4 className="text-white font-semibold text-sm">{info.label}</h4>
-                  <p className="text-gray-400 text-sm mt-0.5">{info.value}</p>
-                </div>
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-prime-800 border border-prime-600">
+              <HiLocationMarker className="text-accent text-xl mt-0.5 shrink-0" />
+              <div>
+                <h4 className="text-white font-semibold text-sm">Ubicació</h4>
+                <p className="text-gray-400 text-sm mt-0.5">Sant Pol de Mar, Maresme (Barcelona)</p>
               </div>
-            ))}
+            </div>
+
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-prime-800 border border-prime-600">
+              <HiMail className="text-accent text-xl mt-0.5 shrink-0" />
+              <div>
+                <h4 className="text-white font-semibold text-sm">Formulari d'inscripció</h4>
+                <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="text-accent text-sm mt-0.5 hover:underline">
+                  Omple el formulari online
+                </a>
+              </div>
+            </div>
 
             <a
               href="https://wa.me/34600123456?text=Hola!%20M'agradaria%20tenir%20més%20informació%20sobre%20Prime%20Academy%20Maresme"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold uppercase tracking-wider transition-all hover:shadow-[0_0_25px_rgba(37,211,102,0.4)]"
-              style={{ animation: 'none' }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.animation = 'energy-glow 1s ease-out'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.animation = 'none'
-              }}
             >
               <FaWhatsapp className="text-xl" />
               Escriu-nos per WhatsApp
