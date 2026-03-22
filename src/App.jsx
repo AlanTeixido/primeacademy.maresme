@@ -10,6 +10,7 @@ import SobreNosaltres from './components/SobreNosaltres'
 import Contacte from './components/Contacte'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <SobreNosaltres />
       <Contacte />
       <Footer />
+      <Analytics />
     </div>
   )
 }
