@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import FreeDayBanner from './components/FreeDayBanner'
 import StatsBar from './components/StatsBar'
 import Serveis from './components/Serveis'
 import Metodologia from './components/Metodologia'
@@ -19,6 +20,7 @@ function App() {
       <ScrollProgress />
       <Navbar />
       <Hero />
+      <FreeDayBanner />
       <StatsBar />
       <Serveis />
       <Metodologia />

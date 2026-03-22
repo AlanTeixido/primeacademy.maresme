@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { HiCalendar, HiClock, HiLocationMarker, HiUserGroup } from 'react-icons/hi'
+import { HiClock, HiLocationMarker, HiUserGroup } from 'react-icons/hi'
+import { GiSnowflake1, GiSunrise } from 'react-icons/gi'
 
 const FORM_URL = 'https://forms.gle/EbTKJiyBLPnM51bd9'
 
@@ -7,7 +8,7 @@ export default function Horaris() {
   return (
     <section id="horaris" className="py-20 sm:py-24 lg:py-32 relative overflow-hidden" style={{ backgroundColor: '#0a0a0a' }}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(204,0,0,0.04),transparent_70%)]" />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ y: 60, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -24,32 +25,83 @@ export default function Horaris() {
           </p>
         </motion.div>
 
+        {/* Horaris blocs */}
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-10">
+          <motion.div
+            initial={{ x: -60, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 120, damping: 16 }}
+            className="p-7 sm:p-8"
+            style={{ backgroundColor: '#141414', borderLeft: '4px solid #CC0000' }}
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <GiSnowflake1 className="text-accent text-2xl" />
+              <h3 className="text-xl font-black text-white uppercase tracking-widest">Horari d'Hivern</h3>
+            </div>
+            <div className="flex items-center gap-3 mb-3">
+              <HiClock className="text-accent text-lg shrink-0" />
+              <div>
+                <p className="text-white font-bold text-lg">Diumenges tarda</p>
+                <p className="text-accent font-black text-2xl">16:30h - 18:00h</p>
+              </div>
+            </div>
+            <p className="text-gray-500 text-sm mt-2 uppercase tracking-wider font-medium">Setembre — Març</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ x: 60, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: 'spring', stiffness: 120, damping: 16, delay: 0.15 }}
+            className="p-7 sm:p-8"
+            style={{ backgroundColor: '#141414', borderLeft: '4px solid #CC0000' }}
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <GiSunrise className="text-accent text-2xl" />
+              <h3 className="text-xl font-black text-white uppercase tracking-widest">Horari d'Estiu</h3>
+            </div>
+            <div className="flex items-center gap-3 mb-3">
+              <HiClock className="text-accent text-lg shrink-0" />
+              <div>
+                <p className="text-white font-bold text-lg">Diumenges tarda</p>
+                <p className="text-accent font-black text-2xl">17:30h - 19:00h</p>
+              </div>
+            </div>
+            <p className="text-gray-500 text-sm mt-2 uppercase tracking-wider font-medium">Abril — Juny</p>
+          </motion.div>
+        </div>
+
+        {/* Info bloc */}
         <motion.div
           initial={{ scale: 0.85, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ type: 'spring', stiffness: 120, damping: 16 }}
-          className="p-8 sm:p-12"
+          className="p-8 sm:p-10"
           style={{ backgroundColor: '#141414', borderLeft: '4px solid #CC0000' }}
         >
           <div className="grid sm:grid-cols-2 gap-8">
-            {[
-              { icon: HiCalendar, title: 'Dia', value: 'Diumenges', sub: 'Sessions setmanals regulars' },
-              { icon: HiClock, title: 'Horari', value: 'Tarda', sub: 'Horari adaptat per a tothom' },
-              { icon: HiLocationMarker, title: 'Ubicació', value: 'Sant Pol de Mar', sub: 'Comarca del Maresme, Barcelona' },
-              { icon: HiUserGroup, title: 'Edat', value: 'Nascuts 2016-2017', sub: 'Obert a altres edats' },
-            ].map((item) => (
-              <div key={item.title} className="flex items-start gap-4">
-                <div className="w-12 h-12 flex items-center justify-center shrink-0" style={{ backgroundColor: 'rgba(204,0,0,0.1)' }}>
-                  <item.icon className="text-accent text-xl" />
-                </div>
-                <div>
-                  <h3 className="text-white font-bold text-lg uppercase tracking-wide">{item.title}</h3>
-                  <p className="text-accent font-black text-xl mt-1">{item.value}</p>
-                  <p className="text-gray-500 text-sm mt-1">{item.sub}</p>
-                </div>
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 flex items-center justify-center shrink-0" style={{ backgroundColor: 'rgba(204,0,0,0.1)' }}>
+                <HiLocationMarker className="text-accent text-xl" />
               </div>
-            ))}
+              <div>
+                <h3 className="text-white font-bold text-lg uppercase tracking-wide">Ubicació</h3>
+                <p className="text-accent font-black text-xl mt-1">Sant Pol de Mar</p>
+                <p className="text-gray-500 text-sm mt-1">Comarca del Maresme, Barcelona</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 flex items-center justify-center shrink-0" style={{ backgroundColor: 'rgba(204,0,0,0.1)' }}>
+                <HiUserGroup className="text-accent text-xl" />
+              </div>
+              <div>
+                <h3 className="text-white font-bold text-lg uppercase tracking-wide">Edat</h3>
+                <p className="text-accent font-black text-xl mt-1">Nascuts 2016-2017</p>
+                <p className="text-gray-500 text-sm mt-1">Obert a altres edats</p>
+              </div>
+            </div>
           </div>
 
           <div className="mt-10 pt-8 border-t border-prime-600 text-center">
